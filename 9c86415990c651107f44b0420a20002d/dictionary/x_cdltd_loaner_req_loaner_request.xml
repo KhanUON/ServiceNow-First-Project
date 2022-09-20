@@ -1,3 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element extends="task" label="Loaner Request" max_length="40" name="x_cdltd_loaner_req_loaner_request" type="collection"/>
+    <element extends="task" label="Loaner Request" max_length="40" name="x_cdltd_loaner_req_loaner_request" sizeclass="0" type="collection">
+        <element attributes="edge_encryption_enabled=true" choice="3" default="new york" label="depot" max_length="40" name="depot" type="string">
+            <choice>
+                <element inactive_on_update="false" label="new york" sequence="0" value="new york"/>
+                <element inactive_on_update="false" label="london" sequence="1" value="london"/>
+                <element inactive_on_update="false" label="australia" sequence="2" value="australia"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="end date" mandatory="true" max_length="40" name="enddate" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="laptop" label="item type" max_length="40" name="itemtype" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Laptop" sequence="0" value="laptop"/>
+                <element inactive_on_update="false" label="Mobile phone" sequence="1" value="mobile phone"/>
+                <element inactive_on_update="false" label="projector" sequence="2" value="projector"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="location to be used" max_length="40" name="loctobeused" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="other" max_length="40" name="other" type="string"/>
+        <element attributes="encode_utf8=false" label="Requested for" mandatory="true" max_length="32" name="requestedfor" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Start date" mandatory="true" max_length="40" name="startdate" type="glide_date_time"/>
+    </element>
 </database>
